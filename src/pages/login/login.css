@@ -1,0 +1,33 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main-content {
+  width: 300px;
+}
+
+.main-content h3 {
+  display: flex;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.bottom-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-div a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.5;
+  letter-spacing: 1px;
+}
+
+.bottom-div a:hover {
+  opacity: 1;
+}

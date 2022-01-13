@@ -1,0 +1,13 @@
+button {
+  letter-spacing: 2px;
+  background: rgb(211, 247, 222);
+  opacity: 0.8;
+  padding: 0.3rem;
+  font-weight: bold;
+  border-style: solid;
+  border-width: thin;
+}
+
+button:hover {
+  background: rgb(141, 190, 157);
+}

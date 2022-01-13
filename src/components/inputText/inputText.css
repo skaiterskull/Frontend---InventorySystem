@@ -1,0 +1,15 @@
+.input-text {
+  width: 100%;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.input-text:focus {
+  outline: none;
+}

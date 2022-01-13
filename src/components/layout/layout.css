@@ -1,0 +1,9 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  margin-left: 100px;
+  min-height: 100vh;
+}

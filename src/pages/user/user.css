@@ -1,0 +1,10 @@
+.user-main-content-container {
+  width: 100%;
+}
+
+.user-main-content {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  width: 90%;
+}

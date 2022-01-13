@@ -1,0 +1,46 @@
+.sidebar-container {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  background: rgb(20, 0, 51);
+}
+
+.menu-list {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+  background: rgb(20, 0, 51);
+}
+
+.menu-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.menu-list li:hover {
+  background: blue;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-title {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
