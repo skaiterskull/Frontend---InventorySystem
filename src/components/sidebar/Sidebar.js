@@ -32,6 +32,7 @@ const menuList = [
     menu: "Employee",
     link: "/",
     fa: "fas fa-user",
+    disabled: true,
   },
   {
     menu: "Report",

@@ -3,9 +3,11 @@ import Layout from "../../components/layout/Layout";
 import Navbar from "../../components/navbar/Navbar";
 import { useSelector } from "react-redux";
 import "./user.css";
-import AddUserForm from "../../components/addUserForm.js/AddUserForm";
+import AddUserForm from "../../components/addUserForm/AddUserForm";
+import UserList from "../../components/userList/UserList";
+import UpdateUserForm from "../../components/updateUserForm/UpdateUserForm";
 
-const list = ["My profile", "Add user", "Update user", "Delete user"];
+const list = ["All user", "Add user", "Update user", "Delete user"];
 
 const User = () => {
   const { activeUserNavbar } = useSelector((state) => state.userNavbar);
@@ -13,8 +15,10 @@ const User = () => {
     <Layout>
       <Navbar list={list} />
       <div className="user-main-content-container">
-        {activeUserNavbar === "My profile" && (
-          <div className="user-main-content">My Profile</div>
+        {activeUserNavbar === "All user" && (
+          <div className="user-main-content">
+            <UserList />
+          </div>
         )}
         {activeUserNavbar === "Add user" && (
           <div className="user-main-content">
@@ -22,7 +26,9 @@ const User = () => {
           </div>
         )}
         {activeUserNavbar === "Update user" && (
-          <div className="user-main-content">Update user</div>
+          <div className="user-main-content">
+            <UpdateUserForm />
+          </div>
         )}
         {activeUserNavbar === "Delete user" && (
           <div className="user-main-content">Delete user</div>

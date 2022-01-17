@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  activeUserNavbar: "My profile",
+  activeUserNavbar: "All user",
 };
 
 const navbarSlice = createSlice({

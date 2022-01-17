@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import InputText from "../inputText/InputText";
 import "./addUserForm.css";
 import Button from "../button/Button";
+import { useDispatch } from "react-redux";
+import { addUser } from "./userAction";
 
 const initialState = {
-  fullName: "",
+  name: "",
   userName: "",
   password: "",
 };
 
 const AddUserForm = () => {
   const [newUserInfo, setNewUserInfo] = useState(initialState);
+
+  const dispatch = useDispatch();
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -22,14 +26,14 @@ const AddUserForm = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(newUserInfo);
+    dispatch(addUser(newUserInfo));
   };
 
   const inputText = [
     {
       type: "text",
-      name: "fullName",
-      placeholder: "Full Name",
+      name: "name",
+      placeholder: "Your name",
       onChange: handleOnChange,
     },
     {

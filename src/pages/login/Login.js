@@ -22,8 +22,8 @@ const Login = () => {
       <div className="main-content">
         <h3>Login to My System</h3>
         <form action="submit">
-          {inputText.map((value) => (
-            <InputText props={value} />
+          {inputText.map((value, i) => (
+            <InputText key={i} props={value} />
           ))}
           <div className="bottom-div">
             <Button text="Login" />
