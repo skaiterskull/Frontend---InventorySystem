@@ -1,8 +1,8 @@
 import React from "react";
 import "./button.css";
 
-const Button = ({ text, ...rest }) => {
-  return <button {...rest}>{text}</button>;
+const Button = ({ fa, text, ...rest }) => {
+  return <button {...rest}>{fa ? <i className={fa}></i> : text}</button>;
 };
 
 export default Button;

@@ -12,3 +12,23 @@ button {
 button:hover {
   background: rgb(141, 190, 157);
 }
+
+.button-fa {
+  background: none;
+  border: none;
+  color: green;
+}
+
+.button-fa:hover {
+  background: none;
+  border: none;
+  color: rgb(3, 41, 3);
+}
+
+.warning-button {
+  color: red;
+}
+
+.warning-button:hover {
+  color: rgb(82, 6, 6);
+}

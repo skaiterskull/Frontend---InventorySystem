@@ -7,7 +7,7 @@ import AddUserForm from "../../components/addUserForm/AddUserForm";
 import UserList from "../../components/userList/UserList";
 import UpdateUserForm from "../../components/updateUserForm/UpdateUserForm";
 
-const list = ["All user", "Add user", "Update user", "Delete user"];
+const list = ["All user", "Add user", "Update user"];
 
 const User = () => {
   const { activeUserNavbar } = useSelector((state) => state.userNavbar);
@@ -29,9 +29,6 @@ const User = () => {
           <div className="user-main-content">
             <UpdateUserForm />
           </div>
-        )}
-        {activeUserNavbar === "Delete user" && (
-          <div className="user-main-content">Delete user</div>
         )}
       </div>
     </Layout>

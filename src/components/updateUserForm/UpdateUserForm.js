@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { updateUser } from "../addUserForm/userAction";
 import {
   roleUpdateSuccess,
   statusUpdateSuccess,
@@ -13,7 +14,13 @@ const UpdateUserForm = () => {
   const dispatch = useDispatch();
 
   const handleOnSubmit = () => {
-    console.log(selectedUser);
+    const { userName, role, isActive } = selectedUser;
+    const obj = {
+      userName,
+      role,
+      isActive,
+    };
+    dispatch(updateUser(obj));
   };
 
   if (!selectedUser._id) {

@@ -2,3 +2,7 @@
   letter-spacing: 1px;
   max-width: 1000px;
 }
+
+.user-list h3 {
+  letter-spacing: 2px;
+}

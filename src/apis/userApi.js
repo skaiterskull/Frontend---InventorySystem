@@ -31,3 +31,16 @@ export const fetchAllUsers = async () => {
     };
   }
 };
+
+export const updateUserRoleAndStatus = async (obj) => {
+  try {
+    const { data } = await axios.patch(apiUrl, obj);
+    return data;
+  } catch (error) {
+    const { message, status } = error.response.data;
+    return {
+      status,
+      message,
+    };
+  }
+};

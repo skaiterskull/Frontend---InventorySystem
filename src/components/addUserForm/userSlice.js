@@ -41,6 +41,15 @@ const userSlice = createSlice({
         isActive: !state.selectedUser.isActive,
       };
     },
+
+    updateUserSuccess: (state) => {
+      state.isPending = false;
+      state.selectedUser = {};
+    },
+
+    updateUserFail: (state) => {
+      state.isPending = false;
+    },
   },
 });
 
@@ -52,8 +61,11 @@ export const {
   fetchUserSuccess,
   fetchUserFail,
   userSelectedSuccess,
+  resetSelectedUser,
   roleUpdateSuccess,
   statusUpdateSuccess,
+  updateUserSuccess,
+  updateUserFail,
 } = actions;
 
 export default reducer;
