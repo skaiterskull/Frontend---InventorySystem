@@ -7,7 +7,7 @@ import { addUser } from "./userAction";
 
 const initialState = {
   name: "",
-  userName: "",
+  email: "",
   password: "",
 };
 
@@ -38,8 +38,8 @@ const AddUserForm = () => {
     },
     {
       type: "text",
-      name: "userName",
-      placeholder: "Username",
+      name: "email",
+      placeholder: "Email",
       onChange: handleOnChange,
     },
     {

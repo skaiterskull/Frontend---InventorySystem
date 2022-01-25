@@ -21,13 +21,13 @@
   align-items: center;
 }
 
-.bottom-div a {
+.forget-password {
   text-decoration: none;
-  color: black;
+  color: black !important;
   opacity: 0.5;
   letter-spacing: 1px;
 }
 
-.bottom-div a:hover {
+.forget-password:hover {
   opacity: 1;
 }

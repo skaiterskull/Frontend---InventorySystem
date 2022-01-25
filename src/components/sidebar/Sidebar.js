@@ -19,11 +19,6 @@ const menuList = [
     fa: "fas fa-store",
   },
   {
-    menu: "Transaction",
-    link: "/",
-    fa: "fas fa-handshake",
-  },
-  {
     menu: "Supplier",
     link: "/",
     fa: "fas fa-truck",
@@ -50,16 +45,27 @@ const Sidebar = () => {
   return (
     <div className="sidebar-container">
       <ul className="menu-list">
-        {menuList.map((value, i) => (
-          <Link to={value.link} key={i}>
-            <li>
-              <span className="menu-icon">
-                <i className={value.fa}></i>
-              </span>
-              <span className="menu-title">{value.menu}</span>
-            </li>
-          </Link>
-        ))}
+        {menuList.map((value, i) =>
+          value.menu === "Logout" ? (
+            <a href="/">
+              <li>
+                <span className="menu-icon">
+                  <i className={value.fa}></i>
+                </span>
+                <span className="menu-title">{value.menu}</span>
+              </li>
+            </a>
+          ) : (
+            <Link to={value.link} key={i}>
+              <li>
+                <span className="menu-icon">
+                  <i className={value.fa}></i>
+                </span>
+                <span className="menu-title">{value.menu}</span>
+              </li>
+            </Link>
+          )
+        )}
       </ul>
     </div>
   );

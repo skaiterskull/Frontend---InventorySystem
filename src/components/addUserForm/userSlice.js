@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isLoading: false,
+  isLoggedIn: false,
+  activeUser: {},
   allUsers: [],
   selectedUser: {},
 };
@@ -43,12 +45,22 @@ const userSlice = createSlice({
     },
 
     updateUserSuccess: (state) => {
-      state.isPending = false;
+      state.isLoading = false;
       state.selectedUser = {};
     },
 
     updateUserFail: (state) => {
-      state.isPending = false;
+      state.isLoading = false;
+    },
+
+    deleteUserSuccess: (state) => {
+      state.isLoading = false;
+    },
+
+    loginSuccess: (state, { payload }) => {
+      state.isLoading = false;
+      state.isLoggedIn = true;
+      state.activeUser = payload.result;
     },
   },
 });
@@ -66,6 +78,8 @@ export const {
   statusUpdateSuccess,
   updateUserSuccess,
   updateUserFail,
+  deleteUserSuccess,
+  loginSuccess,
 } = actions;
 
 export default reducer;

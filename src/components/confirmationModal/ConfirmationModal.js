@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./confirmationModal.css";
 
-const ConfirmationModal = ({ showModal, hideModal, body }) => {
+const ConfirmationModal = ({ showModal, hideModal, runFunction, body }) => {
   return (
     <div
       className={
@@ -12,7 +12,7 @@ const ConfirmationModal = ({ showModal, hideModal, body }) => {
         <p>{body}</p>
         <div className="confirmation-button">
           <span className="tick">
-            <i className="fas fa-check"></i>
+            <i className="fas fa-check" onClick={runFunction}></i>
           </span>
           <span className="close">
             <i className="fas fa-times" onClick={hideModal}></i>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./userList.css";
 import { Table } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUser } from "../addUserForm/userAction";
+import { fetchUser, deleteUser } from "../addUserForm/userAction";
 import { userSelectedSuccess } from "../addUserForm/userSlice";
 import Button from "../button/Button";
 import { active_userNavbar_switched } from "../navbar/navbarSlice";
@@ -12,6 +12,7 @@ const UserList = () => {
   const { allUsers } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const [idToDelete, setIdToDelete] = useState("");
 
   const handleOnSelectUser = (obj) => {
     dispatch(userSelectedSuccess(obj));
@@ -20,10 +21,15 @@ const UserList = () => {
 
   const selectUsertoDelete = (_id) => {
     setShowModal(true);
-    console.log(_id);
+    setIdToDelete(_id);
   };
 
   const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteUser(idToDelete));
     setShowModal(false);
   };
 
@@ -35,6 +41,7 @@ const UserList = () => {
     <div className="user-list">
       <ConfirmationModal
         showModal={showModal}
+        runFunction={handleDelete}
         hideModal={handleCloseModal}
         body="Are you sure you want to delete this?"
       />
@@ -42,9 +49,8 @@ const UserList = () => {
       <Table responsive="md" hover>
         <thead>
           <tr>
-            <th>#</th>
             <th>Name</th>
-            <th>Username</th>
+            <th>Email</th>
             <th>Role</th>
             <th>isActive ?</th>
           </tr>
@@ -55,9 +61,8 @@ const UserList = () => {
               (value, i) =>
                 value.role !== "admin" && (
                   <tr key={value._id}>
-                    <td>{i + 1}</td>
                     <td>{value.name}</td>
-                    <td>{value.userName}</td>
+                    <td>{value.email}</td>
                     <td>{value.role}</td>
                     <td>{value.isActive ? "Active" : "Nonactive"}</td>
                     <td className="d-flex gap-3">
@@ -69,7 +74,7 @@ const UserList = () => {
                           handleOnSelectUser({
                             _id: value._id,
                             name: value.name,
-                            userName: value.userName,
+                            email: value.email,
                             role: value.role,
                             isActive: value.isActive,
                           })

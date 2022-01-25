@@ -14,9 +14,9 @@ const UpdateUserForm = () => {
   const dispatch = useDispatch();
 
   const handleOnSubmit = () => {
-    const { userName, role, isActive } = selectedUser;
+    const { email, role, isActive } = selectedUser;
     const obj = {
-      userName,
+      email,
       role,
       isActive,
     };
@@ -35,7 +35,7 @@ const UpdateUserForm = () => {
     <div className="updateUserForm">
       <h3>Update User</h3>
       <div>{`Name : ${selectedUser.name}`}</div>
-      <div>{`Username : ${selectedUser.userName}`}</div>
+      <div>{`Email : ${selectedUser.email}`}</div>
       <div className="role-button">
         <div>{`Role : ${selectedUser.role}`}</div>
         <Button

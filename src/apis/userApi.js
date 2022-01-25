@@ -6,40 +6,66 @@ const rootUrl =
     : "http://localhost:8000";
 const apiUrl = rootUrl + "/api/v1/user";
 
+//post
 export const createUser = async (obj) => {
   try {
-    const { data } = await axios.post(apiUrl, obj);
+    const { data } = await axios.post(apiUrl, obj, {
+      headers: { Authorization: window.localStorage.getItem("jwtToken") },
+    });
     return data;
   } catch (error) {
-    const { message, status } = error.response.data;
+    const { message } = error.response?.data || error;
     return {
-      status,
+      status: "error",
       message,
     };
   }
 };
 
+//get
 export const fetchAllUsers = async () => {
   try {
-    const { data } = await axios.get(apiUrl);
+    const { data } = await axios.get(apiUrl, {
+      headers: { Authorization: window.localStorage.getItem("jwtToken") },
+    });
     return data;
   } catch (error) {
-    const { message, status } = error.response.data;
+    const { message } = error.response.data || error;
     return {
-      status,
+      status: "error",
       message,
     };
   }
 };
 
+//patch
 export const updateUserRoleAndStatus = async (obj) => {
   try {
-    const { data } = await axios.patch(apiUrl, obj);
+    const { data } = await axios.patch(apiUrl, obj, {
+      headers: { Authorization: window.localStorage.getItem("jwtToken") },
+    });
     return data;
   } catch (error) {
-    const { message, status } = error.response.data;
+    const { message } = error.response.data || error;
     return {
-      status,
+      status: "error",
+      message,
+    };
+  }
+};
+
+//delete
+export const userUpdate = async (_id) => {
+  try {
+    const { data } = await axios.delete(apiUrl, {
+      data: { _id },
+      headers: { Authorization: window.localStorage.getItem("jwtToken") },
+    });
+    return data;
+  } catch (error) {
+    const { message } = error.response.data || error;
+    return {
+      status: "error",
       message,
     };
   }
