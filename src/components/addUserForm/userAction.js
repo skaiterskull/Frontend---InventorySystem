@@ -25,7 +25,7 @@ export const addUser = (obj) => async (dispatch) => {
     return toast.success(result.message);
   }
 
-  toast.error(result.message);
+  return toast.error(result.message);
 };
 
 export const fetchUser = () => async (dispatch) => {
@@ -60,7 +60,7 @@ export const deleteUser = (_id) => async (dispatch) => {
     return toast.success(result.message);
   }
 
-  toast.error(result.message);
+  return toast.error(result.message);
 };
 
 //public api
@@ -71,5 +71,5 @@ export const login = (obj) => async (dispatch) => {
     dispatch(loginSuccess(result));
     return window.localStorage.setItem("jwtToken", result.result.jwtToken);
   }
-  toast.error(result.message);
+  return toast.error(result.message);
 };
