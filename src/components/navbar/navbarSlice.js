@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  activeUserNavbar: "All user",
+  activeNavbar: "",
 };
 
 const navbarSlice = createSlice({
@@ -9,7 +9,7 @@ const navbarSlice = createSlice({
   initialState,
   reducers: {
     active_userNavbar_switched: (state, { payload }) => {
-      state.activeUserNavbar = payload;
+      state.activeNavbar = payload;
     },
   },
 });

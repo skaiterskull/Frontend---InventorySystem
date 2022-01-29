@@ -34,7 +34,7 @@ const Login = () => {
 
   useEffect(() => {
     isLoggedIn && navigate(from);
-  }, [isLoggedIn, navigate]);
+  }, [isLoggedIn, navigate, from]);
 
   const inputText = [
     {
@@ -53,7 +53,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <div className="main-content">
+      <div className="main-page-content">
         <h3>Login to My System</h3>
         <form action="submit">
           {inputText.map((value, i) => (

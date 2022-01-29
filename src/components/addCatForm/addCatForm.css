@@ -1,0 +1,17 @@
+.addCat-form {
+  max-width: 400px;
+}
+
+.addCat-form h3 {
+  letter-spacing: 2px;
+}
+
+.addCat-form small {
+  opacity: 0.5;
+  color: red;
+  letter-spacing: 1px;
+}
+
+.addCat-form form {
+  margin-top: 2rem;
+}

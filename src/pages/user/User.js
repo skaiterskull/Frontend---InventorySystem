@@ -10,23 +10,23 @@ import UpdateUserForm from "../../components/updateUserForm/UpdateUserForm";
 const list = ["All user", "Add user", "Update user"];
 
 const User = () => {
-  const { activeUserNavbar } = useSelector((state) => state.userNavbar);
+  const { activeNavbar } = useSelector((state) => state.userNavbar);
   return (
     <Layout>
-      <Navbar list={list} />
-      <div className="user-main-content-container">
-        {activeUserNavbar === "All user" && (
-          <div className="user-main-content">
+      <Navbar list={list} active="All user" />
+      <div className="main-content-container">
+        {activeNavbar === "All user" && (
+          <div className="main-content">
             <UserList />
           </div>
         )}
-        {activeUserNavbar === "Add user" && (
-          <div className="user-main-content">
+        {activeNavbar === "Add user" && (
+          <div className="main-content">
             <AddUserForm />
           </div>
         )}
-        {activeUserNavbar === "Update user" && (
-          <div className="user-main-content">
+        {activeNavbar === "Update user" && (
+          <div className="main-content">
             <UpdateUserForm />
           </div>
         )}

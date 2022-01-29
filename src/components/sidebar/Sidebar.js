@@ -10,7 +10,7 @@ const menuList = [
   },
   {
     menu: "Category",
-    link: "/",
+    link: "/category",
     fa: "fas fa-gifts",
   },
   {
@@ -47,7 +47,7 @@ const Sidebar = () => {
       <ul className="menu-list">
         {menuList.map((value, i) =>
           value.menu === "Logout" ? (
-            <a href="/">
+            <a href="/" key={i}>
               <li>
                 <span className="menu-icon">
                   <i className={value.fa}></i>

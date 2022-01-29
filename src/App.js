@@ -7,6 +7,7 @@ import User from "./pages/user/User";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
+import Category from "./pages/category/Category";
 
 function App() {
   return (
@@ -22,6 +23,15 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/category"
+          element={
+            <PrivateRoute>
+              <Category />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="*" element={<div>Nothing here</div>} />
       </Routes>
     </Router>

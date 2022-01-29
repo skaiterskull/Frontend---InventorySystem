@@ -1,0 +1,25 @@
+.category-list h3 {
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.category-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cat-list {
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  padding-bottom: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cat-list:hover {
+  background: rgba(0, 0, 0, 0.075);
+  border-radius: 5px;
+  border-bottom: 1px solid white;
+}
