@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./confirmationModal.css";
 
 const ConfirmationModal = ({ showModal, hideModal, runFunction, body }) => {

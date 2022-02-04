@@ -15,12 +15,12 @@ const menuList = [
   },
   {
     menu: "Product",
-    link: "/",
+    link: "/product",
     fa: "fas fa-store",
   },
   {
     menu: "Supplier",
-    link: "/",
+    link: "/supplier",
     fa: "fas fa-truck",
   },
   {

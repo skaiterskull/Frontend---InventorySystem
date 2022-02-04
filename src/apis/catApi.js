@@ -15,7 +15,7 @@ export const createCat = async (obj) => {
     return data;
   } catch (error) {
     console.log(error);
-    const { message } = error.response?.data || error;
+    const message = error?.response?.data?.message || error.message;
     return {
       status: "error",
       message,
@@ -31,7 +31,7 @@ export const fetchAllCats = async () => {
     });
     return data;
   } catch (error) {
-    const { message } = error.response?.data || error;
+    const message = error?.response?.data?.message || error.message;
     return {
       status: "error",
       message,
@@ -48,7 +48,7 @@ export const catDelete = async (_id) => {
     });
     return data;
   } catch (error) {
-    const { message } = error.response?.data || error;
+    const message = error?.response?.data?.message || error.message;
     return {
       status: "error",
       message,

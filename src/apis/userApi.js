@@ -14,7 +14,7 @@ export const createUser = async (obj) => {
     });
     return data;
   } catch (error) {
-    const { message } = error.response?.data || error;
+    const message = error?.response?.data?.message || error.message;
     return {
       status: "error",
       message,
@@ -30,7 +30,7 @@ export const fetchAllUsers = async () => {
     });
     return data;
   } catch (error) {
-    const { message } = error.response?.data || error;
+    const message = error?.response?.data?.message || error.message;
     return {
       status: "error",
       message,
@@ -46,7 +46,7 @@ export const updateUserRoleAndStatus = async (obj) => {
     });
     return data;
   } catch (error) {
-    const { message } = error.response?.data || error;
+    const message = error?.response?.data?.message || error.message;
     return {
       status: "error",
       message,
@@ -63,7 +63,7 @@ export const userUpdate = async (_id) => {
     });
     return data;
   } catch (error) {
-    const { message } = error.response?.data || error;
+    const message = error?.response?.data?.message || error.message;
     return {
       status: "error",
       message,
