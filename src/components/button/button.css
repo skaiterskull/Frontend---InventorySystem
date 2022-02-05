@@ -29,6 +29,14 @@ button:hover {
   color: red;
 }
 
+.info-button {
+  color: blue;
+}
+
 .warning-button:hover {
   color: rgb(129, 40, 40);
+}
+
+.info-button:hover {
+  color: rgb(143, 143, 250);
 }

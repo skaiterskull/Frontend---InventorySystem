@@ -1,0 +1,7 @@
+.update-supplier-form {
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+}

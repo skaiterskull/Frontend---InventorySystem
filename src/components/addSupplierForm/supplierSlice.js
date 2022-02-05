@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isLoading: false,
   allSuppliers: [],
+  selectedSupplier: {},
 };
 
 const supplierSlice = createSlice({
@@ -33,6 +34,16 @@ const supplierSlice = createSlice({
     deleteSupplierSuccess: (state) => {
       state.isLoading = false;
     },
+    supplierSelectedSuccess: (state, { payload }) => {
+      state.selectedSupplier = payload;
+    },
+    updateSupplierSuccess: (state, { payload }) => {
+      state.isLoading = false;
+      state.selectedSupplier = payload.result;
+    },
+    updateSupplierFail: (state) => {
+      state.isLoading = false;
+    },
   },
 });
 
@@ -45,6 +56,9 @@ export const {
   fetchSupplierFail,
   deleteSupplierSuccess,
   addSupplierFail,
+  supplierSelectedSuccess,
+  updateSupplierSuccess,
+  updateSupplierFail,
 } = actions;
 
 export default reducer;

@@ -22,3 +22,35 @@ export const createSupplier = async (obj) => {
     };
   }
 };
+
+//get
+export const fetchAllSuppliers = async () => {
+  try {
+    const { data } = await axios.get(apiUrl, {
+      headers: { Authorization: window.localStorage.getItem("jwtToken") },
+    });
+    return data;
+  } catch (error) {
+    const message = error?.response?.data?.message || error.message;
+    return {
+      status: "error",
+      message,
+    };
+  }
+};
+
+//patch
+export const supplierUpdate = async (obj) => {
+  try {
+    const { data } = await axios.put(apiUrl, obj, {
+      headers: { Authorization: window.localStorage.getItem("jwtToken") },
+    });
+    return data;
+  } catch (error) {
+    const message = error?.response?.data?.message || error.message;
+    return {
+      status: "error",
+      message,
+    };
+  }
+};
