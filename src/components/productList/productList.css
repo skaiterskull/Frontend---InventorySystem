@@ -1,18 +1,19 @@
-.supplier-list {
+.product-list {
   max-width: 1000px;
 }
 
-.supplier-list h3 {
+.product-list h5 {
   letter-spacing: 2px;
   margin-bottom: 1rem;
+  margin-top: 3rem;
 }
 
-.supplier-list ul {
+.product-list ul {
   list-style-type: none;
   padding: 0;
 }
 
-.sup-list {
+.pro-list {
   letter-spacing: 1px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0.5rem;
@@ -22,13 +23,23 @@
   align-items: center;
 }
 
-.sup-list:hover {
+.pro-list:hover {
   background: rgba(0, 0, 0, 0.075);
   border-radius: 5px;
   border-bottom: 1px solid white;
 }
 
-.supplier-submenu {
+.product-submenu {
   display: flex;
   gap: 1rem;
+}
+
+.product-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-plu {
+  font-size: 12px;
+  opacity: 0.7;
 }

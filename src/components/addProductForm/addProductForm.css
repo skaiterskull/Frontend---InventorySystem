@@ -1,7 +1,13 @@
 .addProduct-form {
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .addProduct-form h3 {
   letter-spacing: 2px;
+}
+
+.checkbox-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }

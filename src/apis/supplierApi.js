@@ -39,10 +39,27 @@ export const fetchAllSuppliers = async () => {
   }
 };
 
-//patch
+//put
 export const supplierUpdate = async (obj) => {
   try {
     const { data } = await axios.put(apiUrl, obj, {
+      headers: { Authorization: window.localStorage.getItem("jwtToken") },
+    });
+    return data;
+  } catch (error) {
+    const message = error?.response?.data?.message || error.message;
+    return {
+      status: "error",
+      message,
+    };
+  }
+};
+
+//delete
+export const supplierDelete = async (_id) => {
+  try {
+    const { data } = await axios.delete(apiUrl, {
+      data: { _id },
       headers: { Authorization: window.localStorage.getItem("jwtToken") },
     });
     return data;

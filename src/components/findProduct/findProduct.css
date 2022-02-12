@@ -1,0 +1,8 @@
+.find-product h3 {
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.search-bar {
+  max-width: 300px;
+}

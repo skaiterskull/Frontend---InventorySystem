@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 import {
   createSupplier,
   fetchAllSuppliers,
+  supplierDelete,
   supplierUpdate,
 } from "../../apis/supplierApi";
 import {
@@ -12,6 +13,8 @@ import {
   fetchSupplierFail,
   updateSupplierSuccess,
   updateSupplierFail,
+  deleteSupplierSuccess,
+  deleteSupplierFail,
   // deleteSupplierSuccess,
 } from "./supplierSlice";
 
@@ -46,4 +49,16 @@ export const updateSupplier = (obj) => async (dispatch) => {
 
   dispatch(updateSupplierFail());
   return toast.error(result.message);
+};
+
+export const deleteSupplier = (_id) => async (dispatch) => {
+  dispatch(isPending());
+  const result = await supplierDelete(_id);
+  if (result.status === "success") {
+    dispatch(deleteSupplierSuccess());
+    dispatch(fetchSupplier());
+    return toast.success(result.message);
+  }
+  dispatch(deleteSupplierFail());
+  toast.error(result.message);
 };

@@ -1,27 +1,26 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCat } from "../addCatForm/catAction";
+import { fetchSupplier } from "../addSupplierForm/supplierAction";
 import CustomCheckbox from "../customCheckbox/CustomCheckbox";
-import "./catCheckbox.css";
 
-const CatCheckbox = ({ handleOnChange }) => {
-  const { allCategories } = useSelector((state) => state.category);
+const SupplierCheckbox = ({ handleOnChange }) => {
+  const { allSuppliers } = useSelector((state) => state.supplier);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCat());
+    dispatch(fetchSupplier());
   }, [dispatch]);
 
   return (
     <div className="cat-checkbox">
-      <p>Select Category</p>
+      <p>Select Supplier</p>
       <CustomCheckbox
-        data={allCategories}
-        name="category"
+        data={allSuppliers}
+        name="supplier"
         handleOnChange={handleOnChange}
       />
     </div>
   );
 };
 
-export default CatCheckbox;
+export default SupplierCheckbox;

@@ -4,6 +4,7 @@ const initialState = {
   isLoading: false,
   allSuppliers: [],
   selectedSupplier: {},
+  supplierDetail: {},
 };
 
 const supplierSlice = createSlice({
@@ -34,6 +35,11 @@ const supplierSlice = createSlice({
     deleteSupplierSuccess: (state) => {
       state.isLoading = false;
     },
+
+    deleteSupplierFail: (state) => {
+      state.isLoading = false;
+    },
+
     supplierSelectedSuccess: (state, { payload }) => {
       state.selectedSupplier = payload;
     },
@@ -43,6 +49,10 @@ const supplierSlice = createSlice({
     },
     updateSupplierFail: (state) => {
       state.isLoading = false;
+    },
+
+    selectSupplierDetail: (state, { payload }) => {
+      state.supplierDetail = payload;
     },
   },
 });
@@ -59,6 +69,8 @@ export const {
   supplierSelectedSuccess,
   updateSupplierSuccess,
   updateSupplierFail,
+  deleteSupplierFail,
+  selectSupplierDetail,
 } = actions;
 
 export default reducer;
