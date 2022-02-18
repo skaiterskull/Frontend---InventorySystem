@@ -105,7 +105,6 @@ const Test = () => {
       style={{
         maxWidth: "1000px",
         height: "800px",
-        border: "1px solid",
         margin: "2rem",
         display: "flex",
         justifyContent: "center",
