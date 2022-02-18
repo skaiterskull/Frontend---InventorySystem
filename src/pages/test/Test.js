@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Test = () => {
-  const user = [1, 2, 3, 4, 5];
+  const user = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
   const [disabledBtmList, setDisabledBtmList] = useState(false); // to detect if user scroll up y axis
   const [numberOfUser, setNumberOfUser] = useState(6); // small screen max 2 user, medium max 4 user, large max 6 user
@@ -62,13 +62,13 @@ const Test = () => {
         // Handler to call on window resize
         function handleResize() {
           // Set window width/height to state
-          if (window.innerWidth > 0 && window.innerWidth < 1300) {
+          if (window.innerWidth > 0 && window.innerWidth < 800) {
             setNumberOfUser(2);
           }
-          if (window.innerWidth >= 1300 && window.innerWidth < 1650) {
+          if (window.innerWidth >= 800 && window.innerWidth < 1050) {
             setNumberOfUser(4);
           }
-          if (window.innerWidth >= 1650) {
+          if (window.innerWidth >= 1050) {
             setNumberOfUser(6);
           }
           if (window.innerHeight < 800) {
@@ -97,13 +97,13 @@ const Test = () => {
   useWindowSize();
 
   useEffect(() => {
-    currentPage > totalPage && setCurrentPage(1);
-  }, [currentPage, totalPage]);
+    setCurrentPage(1);
+  }, [totalPage]);
 
   return (
     <div
       style={{
-        width: "1000px",
+        maxWidth: "1000px",
         height: "800px",
         border: "1px solid",
         margin: "2rem",
