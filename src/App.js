@@ -10,13 +10,16 @@ import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import Category from "./pages/category/Category";
 import Product from "./pages/product/Product";
 import Supplier from "./pages/supplier/Supplier";
+import Test from "./pages/test/Test";
 
 function App() {
   return (
     <Router>
       <ToastContainer />
+
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/test" element={<Test />} />
         <Route
           path="/user"
           element={

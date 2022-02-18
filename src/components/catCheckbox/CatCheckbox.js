@@ -4,7 +4,7 @@ import { fetchCat } from "../addCatForm/catAction";
 import CustomCheckbox from "../customCheckbox/CustomCheckbox";
 import "./catCheckbox.css";
 
-const CatCheckbox = ({ handleOnChange }) => {
+const CatCheckbox = ({ handleOnChange, productCatId }) => {
   const { allCategories } = useSelector((state) => state.category);
   const dispatch = useDispatch();
 
@@ -19,6 +19,7 @@ const CatCheckbox = ({ handleOnChange }) => {
         data={allCategories}
         name="category"
         handleOnChange={handleOnChange}
+        _id={productCatId}
       />
     </div>
   );

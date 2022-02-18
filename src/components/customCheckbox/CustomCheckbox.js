@@ -1,19 +1,21 @@
 import React from "react";
 import "./customCheckbox.css";
 
-const CustomCheckbox = ({ data, name, handleOnChange }) => {
+const CustomCheckbox = ({ data, name, handleOnChange, _id }) => {
   return (
     <div className="custom-checkbox">
       {data.length ? (
-        data.map((value, i) => (
-          <label className="label-checkbox" key={value._id}>
-            {value.name}
+        data.map((item, i) => (
+          <label className="label-checkbox" key={item._id}>
+            {item.name}
             <input
               type="checkbox"
               name={name}
-              value={value._id}
+              value={item._id}
               onChange={handleOnChange}
+              defaultChecked={_id ? _id.includes(item._id) : false}
             />
+
             <span className="checkmark"></span>
           </label>
         ))

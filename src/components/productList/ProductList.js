@@ -1,17 +1,29 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { productSelected } from "../addProductForm/productSlice";
 import Button from "../button/Button";
 import ConfirmationModal from "../confirmationModal/ConfirmationModal";
+import { active_userNavbar_switched } from "../navbar/navbarSlice";
 import "./productList.css";
 
-const ProductList = () => {
+const ProductList = ({ showAll }) => {
   const [showModal, setShowModal] = useState(false);
   const [idToDelete, setIdToDelete] = useState("");
   const { productInSearch } = useSelector((state) => state.product);
 
+  const dispatch = useDispatch();
+
+  const array = productInSearch.slice(0, 10);
+  const product = showAll ? productInSearch : array;
+
   const handleDelete = () => {
     // dispatch(deleteSupplier(idToDelete));
     setShowModal(false);
+  };
+
+  const handleSelectProduct = (productInfo) => {
+    dispatch(active_userNavbar_switched("Update product"));
+    return dispatch(productSelected(productInfo));
   };
 
   const selectProductToDelete = (_id) => {
@@ -33,8 +45,8 @@ const ProductList = () => {
         body="Are you sure you want to delete this product? "
       />
       <ul>
-        {productInSearch.length ? (
-          productInSearch.map((value, i) => (
+        {product.length ? (
+          product.map((value, i) => (
             <li className="pro-list" key={value._id}>
               <div className="product-left">
                 <span>{value.name}</span>
@@ -58,15 +70,18 @@ const ProductList = () => {
                 <Button
                   fa="far fa-edit"
                   className="button-fa"
-                  //   onClick={() =>
-                  //     handleOnSelectSupplier({
-                  //       _id: value._id,
-                  //       name: value.name,
-                  //       slug: value.slug,
-                  //       address: value.address,
-                  //       phone: value.phone,
-                  //     })
-                  //   }
+                  onClick={() =>
+                    handleSelectProduct({
+                      _id: value._id,
+                      name: value.name,
+                      plu: value.plu,
+                      isActive: value.isActive,
+                      buyPrice: value.buyPrice,
+                      sellPrice: value.sellPrice,
+                      supplier: value.supplier,
+                      category: value.category,
+                    })
+                  }
                 ></Button>
                 <Button
                   fa="fas fa-trash-alt"

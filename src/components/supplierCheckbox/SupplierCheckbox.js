@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSupplier } from "../addSupplierForm/supplierAction";
 import CustomCheckbox from "../customCheckbox/CustomCheckbox";
 
-const SupplierCheckbox = ({ handleOnChange }) => {
+const SupplierCheckbox = ({ handleOnChange, productSupId }) => {
   const { allSuppliers } = useSelector((state) => state.supplier);
   const dispatch = useDispatch();
 
@@ -18,6 +18,7 @@ const SupplierCheckbox = ({ handleOnChange }) => {
         data={allSuppliers}
         name="supplier"
         handleOnChange={handleOnChange}
+        _id={productSupId}
       />
     </div>
   );

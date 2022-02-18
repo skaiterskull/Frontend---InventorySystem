@@ -1,0 +1,10 @@
+.update-product-form {
+  max-width: 400px;
+  letter-spacing: 2px;
+}
+
+.update-product-checkbox {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}

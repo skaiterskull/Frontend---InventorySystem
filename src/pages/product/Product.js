@@ -4,8 +4,9 @@ import Navbar from "../../components/navbar/Navbar";
 import { useSelector } from "react-redux";
 import AddProductForm from "../../components/addProductForm/AddProductForm";
 import FindProduct from "../../components/findProduct/FindProduct";
+import UpdateProductForm from "../../components/updateProductForm/UpdateProductForm";
 
-const list = ["Find product", "Add product"];
+const list = ["Find product", "Add product", "Update product"];
 
 const Product = () => {
   const { activeNavbar } = useSelector((state) => state.userNavbar);
@@ -21,6 +22,11 @@ const Product = () => {
         {activeNavbar === "Add product" && (
           <div className="main-content">
             <AddProductForm />
+          </div>
+        )}
+        {activeNavbar === "Update product" && (
+          <div className="main-content">
+            <UpdateProductForm />
           </div>
         )}
       </div>

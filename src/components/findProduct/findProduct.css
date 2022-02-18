@@ -1,3 +1,7 @@
+.find-product {
+  max-width: 1000px;
+}
+
 .find-product h3 {
   letter-spacing: 2px;
   margin-bottom: 2rem;
@@ -5,4 +9,17 @@
 
 .search-bar {
   max-width: 300px;
+}
+
+.search-info {
+  font-size: 12px;
+  text-align: end;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.view-all {
+  color: blue;
+  cursor: pointer;
+  font-weight: bolder;
 }

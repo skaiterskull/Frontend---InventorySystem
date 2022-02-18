@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   isLoading: false,
   productInSearch: [],
+  selectedProduct: {},
 };
 
 const productSlice = createSlice({
@@ -30,6 +31,9 @@ const productSlice = createSlice({
       state.isLoading = false;
       state.productInSearch = [];
     },
+    productSelected: (state, { payload }) => {
+      state.selectedProduct = payload;
+    },
   },
 });
 
@@ -41,6 +45,7 @@ export const {
   addProductFail,
   productFound,
   productNotFound,
+  productSelected,
 } = actions;
 
 export default reducer;
