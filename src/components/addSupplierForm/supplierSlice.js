@@ -43,6 +43,7 @@ const supplierSlice = createSlice({
     supplierSelectedSuccess: (state, { payload }) => {
       state.selectedSupplier = payload;
     },
+
     updateSupplierSuccess: (state, { payload }) => {
       state.isLoading = false;
       state.selectedSupplier = payload.result;

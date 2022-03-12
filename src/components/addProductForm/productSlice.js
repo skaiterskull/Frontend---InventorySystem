@@ -34,6 +34,17 @@ const productSlice = createSlice({
     productSelected: (state, { payload }) => {
       state.selectedProduct = payload;
     },
+
+    updateProductSuccess: (state, { payload }) => {
+      state.isLoading = false;
+      state.selectedSupplier = payload.result;
+      state.productInSearch = [];
+    },
+
+    updateProductFail: (state) => {
+      state.isLoading = false;
+      state.productInSearch = [];
+    },
   },
 });
 
@@ -46,6 +57,8 @@ export const {
   productFound,
   productNotFound,
   productSelected,
+  updateProductSuccess,
+  updateProductFail,
 } = actions;
 
 export default reducer;

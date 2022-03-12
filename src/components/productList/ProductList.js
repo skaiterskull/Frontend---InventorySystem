@@ -9,6 +9,7 @@ import "./productList.css";
 const ProductList = ({ showAll }) => {
   const [showModal, setShowModal] = useState(false);
   const [idToDelete, setIdToDelete] = useState("");
+  const [nameToDelete, setNameToDelete] = useState("");
   const { productInSearch } = useSelector((state) => state.product);
 
   const dispatch = useDispatch();
@@ -26,8 +27,9 @@ const ProductList = ({ showAll }) => {
     return dispatch(productSelected(productInfo));
   };
 
-  const selectProductToDelete = (_id) => {
+  const selectProductToDelete = ({ _id, name }) => {
     setShowModal(true);
+    setNameToDelete(name);
     setIdToDelete(_id);
   };
 
@@ -42,7 +44,7 @@ const ProductList = ({ showAll }) => {
         showModal={showModal}
         runFunction={handleDelete}
         hideModal={handleCloseModal}
-        body="Are you sure you want to delete this product? "
+        body={`Are you sure you want to delete ${nameToDelete}?`}
       />
       <ul>
         {product.length ? (
@@ -86,7 +88,9 @@ const ProductList = ({ showAll }) => {
                 <Button
                   fa="fas fa-trash-alt"
                   className="button-fa warning-button"
-                  onClick={() => selectProductToDelete(value._id)}
+                  onClick={() =>
+                    selectProductToDelete({ _id: value._id, name: value.name })
+                  }
                 ></Button>
               </div>
             </li>
